@@ -1,0 +1,93 @@
+body {
+  background: #ffffff;
+  color: #2c2f33;
+  min-width: 200px;
+  min-height: 200px;
+  text-align: center;
+}
+h1  {
+  margin-bottom: 1em;
+}
+p {
+  margin-bottom: 10%;
+  color: #99aab5;
+}
+button  {
+  background-color: #019BC6;
+  border-radius: 25px;
+  border: none;
+  cursor: pointer;
+  color: white;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, .4);
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: auto;
+  outline:none;
+}
+/* Ripple magic */
+button{
+  position: relative;
+  overflow: hidden;
+}
+button:after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 5px;
+  height: 5px;
+  background: rgba(255, 255, 255, .5);
+  opacity: 0;
+  border-radius: 100%;
+  transform: scale(1, 1) translate(-50%);
+  transform-origin: 50% 50%;
+}
+
+@keyframes ripple {
+  0% {
+    transform: scale(0, 0);
+    opacity: 1;
+  }
+  20% {
+    transform: scale(25, 25);
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: scale(40, 40);
+  }
+}
+
+button:focus:not(:active)::after {
+  animation: ripple 1s ease-out;
+}
+#gpa {
+  color:#ffffff;
+  background-color:#7289da;
+  height:100px;
+  text-align:center;
+  line-height:100px;
+  width:250px;
+  border-radius:25px;
+  margin:0 auto;
+  margin-top:10px;
+}
+
+.schoology_link {
+  text-decoration: none;
+  position: relative;
+  display: block;
+  padding: 1em 1.5em;
+  overflow: hidden;
+  border-width: 0;
+  outline: none;
+  border-radius: 50px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, .6);
+  background-color:rgb(9, 87, 64);
+  color: #ecf0f1;
+  transition: background-color .3s;
+  height: 20px;
+}
