@@ -8,8 +8,13 @@ _gaq.push(['_trackPageview']);
   var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
 })();
 
+chrome.tabs.executeScript({
+  file: './src/jquery.min.js'
+});
+
 $('#gpa_calc').on('click', () => {
-    chrome.tabs.executeScript({
-        file: './src/content_script.js'
-      });
+  chrome.tabs.executeScript(null, { file: "./src/jquery.min.js" }, function() {
+    chrome.tabs.executeScript(null, { file: "./src/content_script.js" });
+});
+
 });
