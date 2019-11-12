@@ -1,6 +1,5 @@
 /*jshint esversion: 6 */
 $(document).ready(function () {
-
   const gpaRegular = {"A+":"4.3","A":"4.0","A-":"3.7","B+":"3.3","B":"3.0","B-":"2.7",
     "C+":"2.3","C":"2.0","C-":"1.7","D+":"1.3","D":"1.0","D-":"0.7","F":"0.0"
   };
@@ -29,6 +28,7 @@ $(document).ready(function () {
 
   const grades_and_classes = $("table[class='list']")[0].rows;
 
+
   let grades = [];
   let courses = [];
   let credits = [];
@@ -36,22 +36,16 @@ $(document).ready(function () {
   let total_credits = 0;
   let qualityPoints = 0;
 
-  const ifGym = (course) => {
-
-    if(course.indexOf("Physical Ed") == -1){
-      return True;
-    }
-    else if(course.indexOf("Health") == -1){
-      return True;
-    }
-    else if(course.indexOf("No Grades") == -1){
-      return True;
-    }
+  const ifNotGym = (course) => {
+    return (
+      course.indexOf("Physical Ed") == -1 &&
+      course.indexOf("Health") == -1 &&
+      course.indexOf("No Grades") == -1
+    );
   };
 
   for(let i = 1; i < grades_and_classes.length; i+=1){
-
-    if(ifGym(grades_and_classes[i].cells[0].innerText))
+    if(ifNotGym(grades_and_classes[i].cells[0].innerText))
     {
       courses.push(grades_and_classes[i].cells[0].innerText);
       grades.push(grades_and_classes[i].cells[2].innerText.replace(/[^A-F+-]/g, ''));
@@ -88,20 +82,21 @@ $(document).ready(function () {
       gpas.push(gpaRegular[grades[i]]);
     }
   }
+
   for(let i = 0; i < courses.length; i+=1){
     qualityPoints += gpas[i] * credits[i];
   }
+
   let gpa = qualityPoints / total_credits;
 
-  if(gpa > 0){
-    $("p[style='text-align: center']").remove();
-    $("#gpa").remove();
-    let html = '<h1 id="gpa" style="color:#ffffff;background-color:#019BC6;height:10px;text-align:center;line-height:100px;width:50px;border-radius:25px;margin:0 auto;margin-top:10px;  box-shadow: 2px 2px 4px rgba(0, 0, 0, .4);"> GPA: ';
-    html += gpa.toFixed(2);
-    html += "</h1>";
-    $('p[class="sectionTitle"]').append($(html));
-    gpaDiv = $("#gpa");
-    gpaDiv.animate({height: '100px', opacity: '0.6'}, "slow");
-    gpaDiv.animate({width: '250px', opacity: '1'}, "fast");
-  }
+  $("p[style='text-align: center']").remove();
+  $("#gpa").remove();
+  let html = '<h1 id="gpa" style="color:#ffffff;background-color:#019BC6;height:10px;text-align:center;line-height:100px;width:50px;border-radius:25px;margin:0 auto;margin-top:10px;  box-shadow: 2px 2px 4px rgba(0, 0, 0, .4);"> GPA: ';
+  html += gpa.toFixed(2);
+  html += "</h1>";
+  $('p[class="sectionTitle"]').append($(html));
+  gpaDiv = $("#gpa");
+  gpaDiv.animate({height: '100px', opacity: '0.6'}, "slow");
+  gpaDiv.animate({width: '250px', opacity: '1'}, "fast");
+
 });
