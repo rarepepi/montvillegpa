@@ -1,8 +1,8 @@
 body {
-  background: #212121;
-  color: #2c2f33;
-  min-width: 200px;
-  min-height: 200px;
+  background: #222222;
+  color: #636363;
+  min-width: 350px;
+  min-height: 150px;
   text-align: center;
   margin: auto;
 }
@@ -10,7 +10,7 @@ h1  {
   margin-bottom: 1em;
 }
 p {
-  margin-bottom: 10%;
+  margin-bottom: 5%;
   color: #99aab5;
 }
 button  {
@@ -20,7 +20,7 @@ button  {
   cursor: pointer;
   color: white;
   box-shadow: 2px 2px 4px rgba(0, 0, 0, .4);
-  padding: 15px 32px;
+  padding: 15px 15px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
