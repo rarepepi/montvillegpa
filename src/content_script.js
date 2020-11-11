@@ -102,12 +102,16 @@ $(document).ready(function () {
 
   $("p[style='text-align: center']").remove();
   $("#gpa").remove();
+  let loading = '<div id="loading" class="loader">Loading...</div>'
+  $('p[class="sectionTitle"]').append($(loading));
   let html = '<h1 id="gpa" style="color:#ffffff;background-color:#019BC6;height:10px;text-align:center;line-height:100px;width:50px;border-radius:25px;margin:0 auto;margin-top:10px;  box-shadow: 2px 2px 4px rgba(0, 0, 0, .4);"> GPA: ';
   html += gpa.toFixed(2);
   html += "</h1>";
-  $('p[class="sectionTitle"]').append($(html));
-  gpaDiv = $("#gpa");
-  gpaDiv.animate({height: '100px', opacity: '0.6'}, "slow");
-  gpaDiv.animate({width: '250px', opacity: '1'}, "fast");
-
+  setTimeout(function(){
+    $("#loading").remove();
+    $('p[class="sectionTitle"]').append($(html));
+    gpaDiv = $("#gpa");
+    gpaDiv.animate({height: '100px', opacity: '0.6'}, "slow");
+    gpaDiv.animate({width: '250px', opacity: '1'}, "fast");
+    }, 1000);
 });

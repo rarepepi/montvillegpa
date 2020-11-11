@@ -1,5 +1,5 @@
 {
-  "manifest_version": 3,
+  "manifest_version": 2,
   "name": "Montville GPA Calculator",
   "description": "This extension calculates the GPA for Montville HS Students",
   "version": "4",
@@ -15,6 +15,7 @@
     {
       "matches": ["https://parents.montville.net/*", "https://parents.genesisedu.com/*"],
       "js": ["./src/jquery.min.js", "./src/content_script.js"],
+      "css": ["./styles/loader.css"],
       "run_at": "document_end"
 
     }
