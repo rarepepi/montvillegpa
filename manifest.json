@@ -4,9 +4,10 @@
   "description": "This extension calculates the GPA for Montville HS Students",
   "version": "4",
   "author": "Pepi Martinez",
-  "background": {
-    "scripts": ["./src/jquery.min.js", "./popup.js"]
-  },
+  // "background": {
+  //   "scripts": ["./src/jquery.min.js", "./popup.js"],
+  //   "persistent": false
+  // },
   "permissions": [
     "activeTab"
   ],

@@ -113,5 +113,5 @@ $(document).ready(function () {
     gpaDiv = $("#gpa");
     gpaDiv.animate({height: '100px', opacity: '0.6'}, "slow");
     gpaDiv.animate({width: '250px', opacity: '1'}, "fast");
-    }, 1000);
+    }, 1500);
 });
