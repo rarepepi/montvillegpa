@@ -2,7 +2,7 @@
   "manifest_version": 2,
   "name": "Montville GPA Calculator",
   "description": "This extension calculates the GPA for Montville HS Students",
-  "version": "4",
+  "version": "4.1",
   "author": "Pepi Martinez",
   // "background": {
   //   "scripts": ["./src/jquery.min.js", "./popup.js"],
