@@ -3,10 +3,28 @@
   <head>
     <meta charset="utf-8">
     <link rel="stylesheet" href="./styles/mystyles.css">
+          <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+       <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="./styles/materialize.min.css">
     <title>Montville GPA</title>
   </head>
-  <body id='root'>
-    <h1>Montville GPA Calculator</h1>
+  <body id="root">
+    <div class="container">
+      
+      <div class="card grey darken-4">
+        <div class="card-content white-text">
+          <span class="card-title yellow-text text-lighten-1">Montville GPA Calculator</span>
+          <p>The GPA you see will be for only the marking period you have open in parent access.</p>
+        </div>
+        <div class="card-action">
+          <button id="gpa_calc" class="btn green darken-4
+ waves-effect waves-light" type="button" name="button">Calculate
+            <i class="material-icons right">calculate</i>
+          </button>
+        </div>
+            </div>
+   <!--  <h1>Montville GPA Calculator</h1>
     <button id="gpa_calc" type="button" name="button">Calculate!</button>
     <p>
       The GPA you see will be for only the marking period you have open in parent access.
@@ -18,8 +36,10 @@
     </a>
     <p>Note: the new Schoology version has a dark mode if you go to options</p>
     <p>Developed by &copy; Pepi Martinez</p>
-    <p style"font-size:2px">Version 3.3</p>
+    <p style"font-size:2px">Version 3.3</p> -->
   </body>
+    <!-- Compiled and minified JavaScript -->
+    <script src="./src/materialize.min.js"></script>
   <script type="text/javascript" src="./src/jquery.min.js"></script>
   <script type="text/javascript" src="popup.js"></script>
 </html>

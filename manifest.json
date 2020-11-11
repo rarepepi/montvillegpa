@@ -2,10 +2,10 @@
   "manifest_version": 2,
   "name": "Montville GPA Calculator",
   "description": "This extension calculates the GPA for Montville HS Students",
-  "version": "3.3",
+  "version": "3.4",
   "author": "Pepi Martinez",
   "background": {
-    "scripts": ["./src/jquery.min.js", "popup.js"]
+    "scripts": ["./src/jquery.min.js", "./popup.js"]
   },
   "permissions": [
     "activeTab"
@@ -14,12 +14,14 @@
   "content_scripts": [
     {
       "matches": ["https://parents.montville.net/*", "https://parents.genesisedu.com/*"],
-      "js": ["./src/jquery.min.js", "./src/content_script.js"]
+      "js": ["./src/jquery.min.js", "./src/content_script.js"],
+      "run_at": "document_end"
+
     }
 ],
   "browser_action": {
     "default_icon": "./images/icon.png",
     "default_title": "Montville GPA",
-    "default_popup": "popup.html"
+    "default_popup": "./popup.html"
     }
 }

@@ -26,8 +26,8 @@ $(document).ready(function () {
 
   const semester = ["Forensic Science", "Robotics Engineering"];
 
+  // Get all the data inside the gradebook table
   const grades_and_classes = $("table[class='list']")[0].rows;
-
 
   let grades = [];
   let courses = [];
@@ -36,38 +36,49 @@ $(document).ready(function () {
   let total_credits = 0;
   let qualityPoints = 0;
 
-  const ifNotGym = (course) => {
+  // A valid course must not be a non gpa class i.e gym, and have a valid grade
+  const ifValid = (name, grade) => {
     return (
-      course.indexOf("Physical Ed") == -1 &&
-      course.indexOf("Health") == -1 &&
-      course.indexOf("No Grades") == -1
+      name.indexOf("Physical Ed") == -1 &&
+      name.indexOf("Health") == -1 &&
+      grade.indexOf("No Grades") == -1 &&
+      grade.indexOf("Not Graded") == -1 &&
+      grade.length > 0
     );
   };
 
-  for(let i = 1; i < grades_and_classes.length; i+=1){
-    if(ifNotGym(grades_and_classes[i].cells[0].innerText))
-    {
-      courses.push(grades_and_classes[i].cells[0].innerText);
-      grades.push(grades_and_classes[i].cells[2].innerText.replace(/[^A-F+-]/g, ''));
+  // Filter out through all courses for those that are valid
+  for(let i = 1; i < grades_and_classes.length; i++) {
+    let name = grades_and_classes[i].cells[0].innerText;
+    let grade = grades_and_classes[i].cells[2].innerText.replace(/[^A-F+-]/g, '');
+    if(ifValid(name, grade)) {
+      courses.push(name);
+      grades.push(grade);
     }
   }
 
+  // Filter classes by credits
   for(let i = 0; i < courses.length; i+=1){
     if(halfYear.indexOf(courses[i]) > -1){
       credits.push("2.5");
       total_credits += 2.5;
+      console.log(courses[i]);
     }
     else if(labs.indexOf(courses[i]) > -1){
       credits.push("6");
       total_credits += 6;
+      console.log(courses[i]);
     }
     else if(semester.indexOf(courses[i]) > -1){
       credits.push("3");
       total_credits += 3;
+      console.log(courses[i]);
+
     }
     else{
       credits.push("5");
       total_credits += 5;
+      console.log(courses[i]);
     }
   }
 

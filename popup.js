@@ -14,7 +14,6 @@ chrome.tabs.executeScript({
 
 $('#gpa_calc').on('click', () => {
   chrome.tabs.executeScript(null, { file: "./src/jquery.min.js" }, function() {
-    chrome.tabs.executeScript(null, { file: "./src/content_script.js" });
 });
 
 });

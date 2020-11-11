@@ -1,9 +1,10 @@
 body {
-  background: #ffffff;
+  background: #212121;
   color: #2c2f33;
   min-width: 200px;
   min-height: 200px;
   text-align: center;
+  margin: auto;
 }
 h1  {
   margin-bottom: 1em;
