@@ -6,14 +6,17 @@ body {
   text-align: center;
   margin: auto;
 }
-h1  {
+
+h1 {
   margin-bottom: 1em;
 }
+
 p {
   margin-bottom: 5%;
   color: #99aab5;
 }
-button  {
+
+button {
   background-color: #019BC6;
   border-radius: 25px;
   border: none;
@@ -26,13 +29,15 @@ button  {
   display: inline-block;
   font-size: 16px;
   margin: auto;
-  outline:none;
+  outline: none;
 }
+
 /* Ripple magic */
-button{
+button {
   position: relative;
   overflow: hidden;
 }
+
 button:after {
   content: '';
   position: absolute;
@@ -52,10 +57,12 @@ button:after {
     transform: scale(0, 0);
     opacity: 1;
   }
+
   20% {
     transform: scale(25, 25);
     opacity: 1;
   }
+
   100% {
     opacity: 0;
     transform: scale(40, 40);
@@ -65,16 +72,22 @@ button:after {
 button:focus:not(:active)::after {
   animation: ripple 1s ease-out;
 }
+
 #gpa {
-  color:#ffffff;
-  background-color:#7289da;
-  height:100px;
-  text-align:center;
-  line-height:100px;
-  width:250px;
-  border-radius:25px;
-  margin:0 auto;
-  margin-top:10px;
+  color: #ffffff;
+  background-color: #7289da;
+  height: 100px;
+  text-align: center;
+  line-height: 100px;
+  width: 250px;
+  border-radius: 25px;
+  margin: 0 auto;
+  margin-top: 10px;
+  transition: all .2s ease-in-out;
+}
+
+#gpa:hover {
+  transform: scale(1.1);
 }
 
 .schoology_link {
@@ -87,7 +100,7 @@ button:focus:not(:active)::after {
   outline: none;
   border-radius: 50px;
   box-shadow: 0 1px 4px rgba(0, 0, 0, .6);
-  background-color:rgb(9, 87, 64);
+  background-color: rgb(9, 87, 64);
   color: #ecf0f1;
   transition: background-color .3s;
   height: 20px;
